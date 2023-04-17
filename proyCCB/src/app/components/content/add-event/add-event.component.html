@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Nuevo Evento</h1>
+    <hr>
+    <form class="row g-3" (ngSubmit)="addEvent()">
+        <div class="col-md-4">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="event.title" [required]="true">
+        </div>
+        <div class="col-md-4">
+            <label for="email" class="form-label">Correo del Participante</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email.email" [required]="true">
+        </div>
+        <div class="col-md-4">
+            <label for="inicio" class="form-label">Inicio</label>
+            <input type="datetime-local" class="form-control" id="inicio" name="inicio" [(ngModel)]="event.start" [required]="true">
+            <p-checkbox [binary]="true" [(ngModel)]="showEnd" name="showEnd" label="¿Tiene fin el evento?"></p-checkbox>
+        </div>
+        <div class="col-md-4" *ngIf="showEnd">
+            <label for="fin" class="form-label">Fin</label>
+            <input type="datetime-local" class="form-control" id="fin" name="fin" [(ngModel)]="event.end">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="goBack()">Agendar</button>
+    </form>
+</div>

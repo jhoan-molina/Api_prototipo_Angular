@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="container">
+    <h2>Actualizar de Activos</h2>
+    <form class="row g-3">
+        <div class="col-md-4">
+            <label class="col-form-label">Identificación</label>
+            <input type="number" class="form-control" name="id" [(ngModel)]= "activo.id" disabled="true">
+        </div>
+        <div class="col-md-6">
+            <label class="col-form-label">Activo UVT</label>
+            <input type="number" class="form-control" name="activo_uvt" [(ngModel)]= "activo.activo_uvt">
+        </div>
+        <div class="col-md-3">
+            <label class="col-form-label">Activo Pesos</label>
+            <input type="number" class="form-control" name="activo_pesos" [(ngModel)]= "activo.activo_pesos">
+        </div>
+        <button type="submit" class="btn btn-success mt-2" (click)="actualizarActivo()">Registrar</button>
+    </form>
+</div>
+

@@ -1,0 +1,76 @@
+<header>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" [routerLink]="['']">Camara de Comercio de Bogotá</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">CCB</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Activos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item"  (click)="goBack('activos')">Lista de Activos</a></li>
+                                <li><a class="dropdown-item"  (click)="goBack('activos/formulario-activo')">Registrar Nuevo Activo</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Establecimientos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" (click)="goBack('establecimiento')">Lista de establecimiento</a></li>
+                                <li><a class="dropdown-item" (click)="goBack('establecimiento/formulario-establecimiento')">Registrar Nuevo establecimiento</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Matricula
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" (click)="goBack('matriculas')">Lista de Matriculas</a></li>
+                                <li><a class="dropdown-item" (click)="goBack('matriculas/formulario-matri')">Registrar Nueva Matricula</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Propietarios
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" (click)="goBack('')">Lista de Propietarios</a></li>
+                                <li><a class="dropdown-item" (click)="goBack('formulario')">Registrar Nuevo Propietario</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Tarifas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item"  (click)="goBack('tarifas')">Lista de Tarifas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" (click)="goBack('calendar')">
+                                Calendario
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

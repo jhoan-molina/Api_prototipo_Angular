@@ -1,0 +1,36 @@
+<!--<div class="container py-5">
+    <form class="mx-auto" style="max-width: 25rem;" #form="ngForm" (ngSubmit)="login(form)">
+        <h1 class="mb-5 text-center">Inicio de Sesión</h1>
+        <div class="mb-3">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" class="form-control" [(ngModel)]="creds.email">
+        </div>
+        <div class="mb-3">
+            <label for="password">Contraseña</label>
+            <input id="password" name="password" type="password" class="form-control" [(ngModel)]="creds.password">
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-lg btn-primary">Ingresar</button>
+        </div>
+    </form>
+</div>-->
+
+<div class="align-items-center">
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <p-card header="Login" subheader="Iniciar sesión en su cuenta" [style]="{width: '35rem', height:'auto'}"
+      styleClass="p-card-shadow" class="bg-light min-vh-100 justify-content-center align-items-center d-flex flex-row">
+      <div class="mb-3">
+        <label for="email">Correo</label>
+        <input id="email" name="email" type="email" class="form-control" pInputText [style]="{width: '32rem'}" placeholder="Email" [(ngModel)]="creds.email"/>
+      </div>
+      <div class="mb-3">
+        <label for="password">Contraseña</label>
+        <input id="password" name="password" type="password" class="form-control" pPassword [style]="{width: '32rem'}" placeholder="Password" [(ngModel)]="creds.password" />
+      </div>
+      <div>
+        <button pButton label="Ingresar" class="p-button-success" [style]="{width: '32rem'}" icon="pi pi-user"></button>
+      </div>
+    </p-card>
+  </form>
+
+</div>

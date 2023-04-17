@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="container">
+    <h2>Actualizar de Matriculas</h2>
+    <form class="row g-3">
+        <div class="col-md-4">
+            <label class="col-form-label">Identificación</label>
+            <input type="number" class="form-control" name="id" [(ngModel)]= "matricula.id" disabled="true">
+        </div>
+        <div class="col-md-3">
+            <label class="col-form-label">Fecha de Matricula</label>
+            <input type="datetime-local" class="form-control" name="fecha_matricula" [(ngModel)]= "matricula.fecha_matricula" disabled="true">
+        </div>
+        <div class="col-md-6">
+            <label class="col-form-label">Valor</label>
+            <input type="number" class="form-control" name="valor" [(ngModel)]= "matricula.valor">
+        </div>
+        <div class="col-md-3">
+            <label class="col-form-label">Estado</label>
+            <input type="number" class="form-control" name="estado" [(ngModel)]= "matricula.estado">
+        </div>
+        <!--<button type="submit" class="btn btn-success mt-2" (click)="crearPropietario()"  *ngIf="!propietario.id">Registrar</button>-->
+        <button type="submit" class="btn btn-success mt-2" (click)="actualizarMatricula()">Registrar</button>
+    </form>
+</div>
+

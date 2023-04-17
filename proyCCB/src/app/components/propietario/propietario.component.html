@@ -1,0 +1,106 @@
+<app-header></app-header>
+<br>
+<!--<div class="container">
+    <h2>Lista de propietarios</h2>
+    <button class="btn btn-primary mb-3" [routerLink]="['formulario']">Crear Propietario</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Tipo de Identificación</th>
+                <th scope="col">Tipo de persona</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Email</th>
+                <th scope="col">Fecha de Registro</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor= "let propietario of propietarios">
+                <th scope="row">{{propietario.id}}</th>
+                <td>{{propietario.tipo_id.nombre}}</td>
+                <td>{{propietario.tipo_persona.nombre}}</td>
+                <td>{{propietario.nombre}}</td>
+                <td>{{propietario.apellido}}</td>   
+                <td>{{propietario.direccion}}</td>
+                <td>{{propietario.email}}</td>
+                <td>{{propietario.fecha_registro}}</td>
+                <td>{{propietario.estado}}</td>
+                <td>
+                    <button class="btn btn-info" [routerLink]="['formulario', propietario.id]">Editar</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="eliminarPropietario(propietario.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->
+
+
+
+<div class="container">
+    <p-toolbar styleClass="mb-4">
+        <ng-template pTemplate="left">
+            <button class="btn btn-success mb-3" [routerLink]="['formulario']">Crear Propietario</button>
+        </ng-template>
+
+        <ng-template pTemplate="right">
+            <i class="pi pi-user" style="font-size: 2rem"></i>
+        </ng-template>
+    </p-toolbar>
+
+    <p-table #dt [value]="propietarios" [rows]="propietarios.length" [paginator]="true"
+        [tableStyle]="{'min-width': '75rem'}" [rowHover]="true" dataKey="id" [showCurrentPageReport]="true" dataKey="id"
+        class="table">
+        <ng-template pTemplate="caption">
+            <h5 class="m-0">Propietarios</h5>
+
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="id" style="max-width:20rem" scope="col">Id <p-sortIcon field="id"></p-sortIcon>
+                </th>
+                <th pSortableColumn="tipo_id" style="max-width:20rem" scope="col">Tipo de Identificación<p-sortIcon
+                        field="tipo_id"></p-sortIcon></th>
+                <th pSortableColumn="tipo_persona" scope="col">Tipo de Persona <p-sortIcon
+                        field="tipo_persona"></p-sortIcon></th>
+                <th pSortableColumn="nombre" style="max-width:10rem" scope="col">Nombre <p-sortIcon
+                        field="nombre"></p-sortIcon></th>
+                <th pSortableColumn="apellido" style="max-width:10rem" scope="col">Apellido <p-sortIcon
+                        field="apellido"></p-sortIcon></th>
+                <th pSortableColumn="direccion" style="min-width:10rem" scope="col">Direccion <p-sortIcon
+                        field="direccion"></p-sortIcon></th>
+                <th pSortableColumn="email" style="max-width:20rem" scope="col">Email <p-sortIcon
+                        field="email"></p-sortIcon></th>
+                <th pSortableColumn="fecha_registro" style="min-width:10rem" scope="col">Fecha de Regisrto <p-sortIcon
+                        field="fecha_registro"></p-sortIcon></th>
+                <th pSortableColumn="estado" style="min-width:5rem" scope="col">Estado <p-sortIcon
+                        field="estado"></p-sortIcon></th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-propietario>
+            <tr>
+                <th scope="row">{{propietario.id}}</th>
+                <td>{{propietario.tipo_id.nombre}}</td>
+                <td>{{propietario.tipo_persona.nombre}}</td>
+                <td>{{propietario.nombre}}</td>
+                <td>{{propietario.apellido}}</td>
+                <td>{{propietario.direccion}}</td>
+                <td>{{propietario.email}}</td>
+                <td>{{propietario.fecha_registro}}</td>
+                <td>{{propietario.estado}}</td>
+                <td>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-primary mr-2"
+                        [routerLink]="['formulario', propietario.id]"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
+                        (click)="eliminarPropietario(propietario.id)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

@@ -1,0 +1,103 @@
+<app-header></app-header>
+<br>
+<!--<div class="container">
+    <h2>Lista de Establecimiento</h2>
+    <button class="btn btn-primary mb-3" [routerLink]="['formulario-establecimiento']">Crear Establecimiento</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Actividad economica</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Activos</th>
+                <th scope="col">Matricula</th>
+                <th scope="col">Fecha Matricula</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor= "let establecimiento of establecimientos">
+                <th scope="row">{{establecimiento.id}}</th>
+                <td>{{establecimiento.actividad_economica.id}}</td>
+                <td>{{establecimiento.nombre}}</td>
+                <td>{{establecimiento.direccion}}</td>
+               <td>{{establecimiento.activos.id}}</td>   
+                <td>{{establecimiento.matricula.id}}</td>
+                <td>{{establecimiento.fecha_matricula}}</td>
+                <td>{{establecimiento.estado}}</td>
+                <td>
+                    <button class="btn btn-info" [routerLink]="['formulario-establecimiento', establecimiento.id]">Editar</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="eliminarPropietario(establecimiento.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->
+
+<div class="container">
+    <p-toolbar styleClass="mb-4">
+        <ng-template pTemplate="left">
+            <!-- <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>-->
+            <!-- <button pButton pRipple [label]="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>-->
+            <button class="btn btn-success mb-3" [routerLink]="['formulario-establecimiento']">Crear Establecimiento</button>
+        </ng-template>
+
+        <ng-template pTemplate="right">
+            <!--<p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="mr-2 inline-block"></p-fileUpload>
+            <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>  -->
+            <i class="pi pi-building" style="font-size: 2rem"></i>
+        </ng-template>
+    </p-toolbar>
+
+    <p-table #dt [value]="establecimientos" [rows]="establecimientos.length" [paginator]="true"
+        [tableStyle]="{'min-width': '75rem'}" [rowHover]="true" dataKey="id" [showCurrentPageReport]="true" dataKey="id"
+        class="table">
+        <ng-template pTemplate="caption">
+            <h5 class="m-0">Establecimiento</h5>
+
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="id" style="max-width:20rem" scope="col">Id <p-sortIcon field="id"></p-sortIcon>
+                </th>
+                <th pSortableColumn="tipo_id" style="max-width:20rem" scope="col">Actividad Economica<p-sortIcon
+                        field="tipo_id"></p-sortIcon></th>
+                <th pSortableColumn="tipo_persona" scope="col">Nombre<p-sortIcon
+                        field="tipo_persona"></p-sortIcon></th>
+                <th pSortableColumn="nombre" style="max-width:10rem" scope="col">Direccion<p-sortIcon
+                        field="nombre"></p-sortIcon></th>
+                <th pSortableColumn="apellido" style="max-width:10rem" scope="col">Activos <p-sortIcon
+                        field="apellido"></p-sortIcon></th>
+                <th pSortableColumn="direccion" style="min-width:10rem" scope="col">Matricula <p-sortIcon
+                        field="direccion"></p-sortIcon></th>
+                <th pSortableColumn="email" style="max-width:20rem" scope="col">Fecha Matricula <p-sortIcon
+                        field="email"></p-sortIcon></th>
+                <th pSortableColumn="fecha_registro" style="min-width:10rem" scope="col">Estado<p-sortIcon
+                        field="fecha_registro"></p-sortIcon></th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-establecimiento>
+            <tr>
+                <th scope="row">{{establecimiento.id}}</th>
+                <td>{{establecimiento.actividad_economica.id}}</td>
+                <td>{{establecimiento.nombre}}</td>
+                <td>{{establecimiento.direccion}}</td>
+               <td>{{establecimiento.activos.id}}</td>   
+                <td>{{establecimiento.matricula.id}}</td>
+                <td>{{establecimiento.fecha_matricula}}</td>
+                <td>{{establecimiento.estado}}</td>
+                <td>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-primary mr-2"
+                    [routerLink]="['formulario-establecimiento', establecimiento.id]"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
+                        (click)="eliminarPropietario(establecimiento.id)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

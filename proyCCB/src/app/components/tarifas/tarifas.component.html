@@ -1,0 +1,60 @@
+<app-header></app-header>
+<br>
+<!--<div class="container">
+    <h2>Lista de Tarifas</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Tipo de Activo</th>
+                <th scope="col">Rango Minimo</th>
+                <th scope="col">Rango Maximo</th>
+                <th scope="col">UVT valor</th>
+                <th scope="col">Pesos Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor= "let tarifas of tarifa">
+                <th scope="row">{{tarifas.id}}</th>
+                <td>{{tarifas.tipo_activo.nombre}}</td>
+                <td>{{tarifas.rango_min}}</td>
+                <td>{{tarifas.rango_max}}</td>
+                <td>{{tarifas.uvt_valor}}</td>
+                <td>{{tarifas.pesos_valor}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->
+
+<div class="container">
+    <p-table [rows]="tarifa.length" [value]="tarifa" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th pSortableColumn="id" style="max-width:20rem" scope="col">Id <p-sortIcon field="id"></p-sortIcon>
+                </th>
+                <th pSortableColumn="tipo_id" style="max-width:20rem" scope="col">Tipo de Activo<p-sortIcon
+                        field="tipo_id"></p-sortIcon></th>
+                <th pSortableColumn="tipo_persona" scope="col">Rango Minimo<p-sortIcon
+                        field="tipo_persona"></p-sortIcon>
+                </th>
+                <th pSortableColumn="nombre" style="max-width:10rem" scope="col">Rango Maximo<p-sortIcon
+                        field="nombre"></p-sortIcon></th>
+                <th pSortableColumn="tipo_persona" scope="col">UVT valor<p-sortIcon field="tipo_persona"></p-sortIcon>
+                </th>
+                <th pSortableColumn="tipo_persona" scope="col">Pesos Valor<p-sortIcon field="tipo_persona"></p-sortIcon>
+                </th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-tarifas>
+            <tr>
+                <td>{{tarifas.id}}</td>
+                <td>{{tarifas.tipo_activo.nombre}}</td>
+                <td>{{tarifas.rango_min}}</td>
+                <td>{{tarifas.rango_max}}</td>
+                <td>{{tarifas.uvt_valor}}</td>
+                <td>{{tarifas.pesos_valor}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="container">
+    <h2>Registro de Propietarios</h2>
+    <form class="row g-3">
+        <div class="col-md-4">
+            <label class="col-form-label">Identificación</label>
+            <input type="number" class="form-control" name="id" [(ngModel)]= "establecimientos.id">
+        </div>
+        <div class="col-md-4">
+            <label for="tipo_id" class="col-form-label">Actividad Economica</label>
+            <select [(ngModel)]= "establecimientos.actividad_economica" class="form-control" name="tipo_id">
+                <option [ngValue]= "undefined">---Seleccionar---</option>
+                <option *ngFor= "let actividad_economica of actividad_economicas" [ngValue]= "actividad_economica">{{actividad_economica.id}} - {{actividad_economica.nombre}}</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label class="col-form-label">Nombre</label>
+            <input type="text" class="form-control" name="nombre" [(ngModel)]= "establecimientos.nombre">
+        </div>
+        <div class="col-md-6">
+            <label class="col-form-label">Direccion</label>
+            <input type="text" class="form-control" name="apellido" [(ngModel)]= "establecimientos.direccion">
+        </div>
+        <div class="col-md-3">
+            <label for="tipo_persona" class="col-form-label ">Activos</label>
+            <select [(ngModel)]= "establecimientos.activos" class="form-control" name="tipo_persona">
+                <option [ngValue]= "undefined">---Seleccionar---</option>
+                <option *ngFor= "let activos of activo" [ngValue]= "activos">{{activos.id}}</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label for="tipo_persona" class="col-form-label ">Matricula</label>
+            <select [(ngModel)]= "establecimientos.matricula" class="form-control" name="tipo_persona">
+                <option [ngValue]= "undefined">---Seleccionar---</option>
+                <option *ngFor= "let matricula of matriculas" [ngValue]= "matricula">{{matricula.id}}</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label class="col-form-label">Fecha de Matricula</label>
+            <input type="datetime-local" class="form-control" name="fecha_registro" [(ngModel)]= "establecimientos.fecha_matricula">
+        </div>
+        <div class="col-md-3">
+            <label class="col-form-label">Estado</label>
+            <input type="number" class="form-control" name="estado" [(ngModel)]= "establecimientos.estado">
+        </div>
+        <button type="submit" class="btn btn-success mt-2" (click)="crearPropietario()">Registrar</button>
+    </form>
+</div>

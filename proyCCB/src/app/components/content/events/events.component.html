@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="container">
+    <br>
+    <section>
+        <button type="button" class="btn btn-primary" routerLink="add-event">Nuevo evento</button>
+    </section>
+    <br>
+    <div class="row">
+        <div class="col-md-9 col-12">
+            <full-calendar [events]="events" [options]="calendarOptionsMonth"></full-calendar>
+        </div>
+        <div class="col-md-3 col-12">
+            <full-calendar [events]="events" [options]="calendarOptionsList"></full-calendar>
+        </div>
+    </div>
+</div>
