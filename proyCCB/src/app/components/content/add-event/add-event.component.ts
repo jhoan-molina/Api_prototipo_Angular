@@ -37,11 +37,13 @@ export class AddEventComponent implements OnInit{
     this.eventService.addEvent(this.event);
   }
 
+  //Trae del input de correo el email y lo asigna al objeto, junto a la descripción del evento
+  //esto se envia como parametro cuando es llamado el servicio de mensajeria 
   sendEmail(){
     this.emailService.sendEmail(this.email.email, this.event.title).subscribe(response => console.log("¡Exito!"));
     console.log(this.email, this.event);
   }
-
+  //Funcion que agrega el evento al calendario y envia el correo al participante
   goBack(){
     this.addEvent();
     this.sendEmail();
