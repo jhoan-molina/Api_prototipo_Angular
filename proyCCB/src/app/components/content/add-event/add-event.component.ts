@@ -16,6 +16,7 @@ export class AddEventComponent implements OnInit{
   public showEnd: boolean;
   public email: Email = new Email();
 
+  //Agregamos como parametro al constructor, tanto un obj de eventos como uno de email
   constructor (public eventService : EventService, public emailService: EmailService, private router: Router) {
     this.event = new Event({});
     this.showEnd = false;
@@ -27,16 +28,16 @@ export class AddEventComponent implements OnInit{
   ngOnInit() {
   }
 
+  //Se agrega una duncion que no retorna nada, aqui es donde se agrega el evento al calendario
   addEvent(){
     
     console.log(this.event)
+    //Hace acceso al servicio de agregar eventos, donde se hace carga a la lista 
+    // del firebase, por esto se envia un objeto de tipo evento
     this.eventService.addEvent(this.event);
   }
 
   sendEmail(){
-    /*if(!this.showEnd){
-      this.event.end = null;
-    }*/
     this.emailService.sendEmail(this.email.email, this.event.title).subscribe(response => console.log("¡Exito!"));
     console.log(this.email, this.event);
   }
