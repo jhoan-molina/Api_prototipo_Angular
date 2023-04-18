@@ -15,8 +15,11 @@ import { Event } from 'src/app/models/event.model';
 })
 export class EventsComponent implements OnInit {
 
+  //creamos un objeto de tipo event
   public events!: Event[];
 
+  //pasamos como parametro el eventService de tipo eventService
+  //donde mostraremos los eventos
   constructor(private eventService : EventService) {
     this.eventService.getEvents().subscribe(events => {
       this.events = events
@@ -27,7 +30,7 @@ export class EventsComponent implements OnInit {
   ngOnInit() {
 
   }
-
+  //Opciones de la cual hace uso el calendario para poder visualizar algunos botones
   calendarOptionsMonth: CalendarOptions = {
     initialView: 'dayGridMonth',
     plugins: [dayGridPlugin, timeGridPlugin,interactionPlugin],
@@ -44,6 +47,7 @@ export class EventsComponent implements OnInit {
 
   };
 
+  //Opciones de la cual hace uso el cuadro de eventos 
   calendarOptionsList: CalendarOptions = {
     initialView: 'listWeek',
     plugins: [dayGridPlugin, listPlugin, interactionPlugin],
