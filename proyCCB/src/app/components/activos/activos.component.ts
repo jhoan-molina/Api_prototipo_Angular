@@ -9,12 +9,14 @@ import { ActivosService } from 'src/app/services/activos.service';
 })
 export class ActivosComponent implements OnInit{
 
+  //creacion del objeto de tipo activos
   activo: Activos[] = [];
 
   constructor(private activosService:ActivosService ){
 
   }
   ngOnInit(): void {
+    
     this.activosService.getActivos().subscribe(
       response => this.activo = response);
   }
