@@ -32,7 +32,6 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import { CalendarComponent } from './components/calendar/calendar.component';
 import { CalendarModule } from 'primeng/calendar';
 import { ContentComponent } from './components/content/content.component';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -72,7 +71,6 @@ const firebaseConfig = {
     EstablecimientoComponent,
     EstablecimientoFormComponent,
     LoginComponent,
-    CalendarComponent,
     ContentComponent,
     EventsComponent,
     NextEventsComponent,

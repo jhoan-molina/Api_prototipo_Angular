@@ -29,7 +29,7 @@ export class ActivosFormUpdateComponent implements OnInit{
     })
   }
 
-  //Se actualiza activos a partir de los datos que se crean desde el formulario
+  //Se crean activos a partir de los datos que se crean desde el formulario
   // se envia un objeto de tipo activo para que el back se encargue
   actualizarActivo(){
     this.activosService.actualizarActivos(this.activo).

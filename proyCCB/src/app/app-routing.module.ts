@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActivosFormUpdateComponent } from './components/activos-form-update/activos-form-update.component';
 import { ActivosFormComponent } from './components/activos-form/activos-form.component';
 import { ActivosComponent } from './components/activos/activos.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
 import { AddEventComponent } from './components/content/add-event/add-event.component';
 import { ContentComponent } from './components/content/content.component';
 import { EventsComponent } from './components/content/events/events.component';
