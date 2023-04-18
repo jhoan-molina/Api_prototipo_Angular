@@ -10,14 +10,17 @@ import { ActivosService } from 'src/app/services/activos.service';
 })
 export class ActivosFormUpdateComponent implements OnInit{
 
+  //creamos un objeto de tipo activos
   activo:Activos = new Activos();
 
+  //pasamos como parametro el activoService de tipo activoService y activatedRoute de tipo ActivatedRoute
+  //donde traeremos los servicios que estan alojados alli
   constructor(private activosService:ActivosService, private activatedRoute: ActivatedRoute){
 
   }
 
   ngOnInit(): void {
-
+    //Actualziar
     this.activatedRoute.params.
     subscribe(params => {let id: number = params['id'];
     if(id){
@@ -26,7 +29,8 @@ export class ActivosFormUpdateComponent implements OnInit{
     })
   }
 
-
+  //Se actualiza activos a partir de los datos que se crean desde el formulario
+  // se envia un objeto de tipo activo para que el back se encargue
   actualizarActivo(){
     this.activosService.actualizarActivos(this.activo).
     subscribe(response => console.log("Actualizado"));
