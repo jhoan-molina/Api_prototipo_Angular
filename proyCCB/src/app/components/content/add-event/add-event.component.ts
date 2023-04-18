@@ -28,7 +28,7 @@ export class AddEventComponent implements OnInit{
   ngOnInit() {
   }
 
-  //Se agrega una duncion que no retorna nada, aqui es donde se agrega el evento al calendario
+  //Se agrega una funcion que no retorna nada, aqui es donde se agrega el evento al calendario
   addEvent(){
     
     console.log(this.event)
@@ -41,7 +41,6 @@ export class AddEventComponent implements OnInit{
   //esto se envia como parametro cuando es llamado el servicio de mensajeria 
   sendEmail(){
     this.emailService.sendEmail(this.email.email, this.event.title).subscribe(response => console.log("¡Exito!"));
-    console.log(this.email, this.event);
   }
   //Funcion que agrega el evento al calendario y envia el correo al participante
   goBack(){
